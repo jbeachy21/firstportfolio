@@ -12,9 +12,10 @@ function pickLetter() {
 
 }
 
-var letter = pickLetter();
+
 
 document.onkeyup = function (event) {
+    var letter = pickLetter();
     GuessesSoFar++;
     var userGuess = event.key;
     GuessesRemaining--;
