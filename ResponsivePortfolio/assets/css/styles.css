@@ -215,3 +215,98 @@ input[type=submit] {
   background: #4aaaa5;
   border: 0 none;
 }
+
+
+@media screen and (max-width: 500px) {
+        
+  body {
+      width: 490px;
+  }
+   #message textarea{
+       width: 350px;
+       height: 350px;
+   }
+   .jumbotron img {
+     width: 100px;
+     height: 100px;
+ }
+ #portfolioBox h3 {
+     font-size: 22px;
+     position: absolute;
+     bottom: 20px;
+     padding: 15px;
+     background-color: #4aaaa5;
+     color: #ffffff;
+     border-bottom: 0;
+     width: 25%;
+     margin-bottom: 0;
+     text-align: center;
+     font-weight: 300;
+     line-height: 30px;
+
+ }
+ 
+  
+}
+
+@media screen and (max-width: 700px) {
+   
+   body {
+       width: 690px;
+   }
+   textarea{
+     width: 350px;
+     height: 350px;
+ }
+  .jumbotron img {
+     width: 150px;
+     height: 150px;
+ }
+ #portfolioBox h3 {
+     font-size: 22px;
+     position: absolute;
+     bottom: 20px;
+     padding: 15px;
+     background-color: #4aaaa5;
+     color: #ffffff;
+     border-bottom: 0;
+     width: 52%;
+     margin-bottom: 0;
+     text-align: center;
+     font-weight: 300;
+     line-height: 30px;
+
+ }
+ 
+}
+@media screen and (max-width: 800px) {
+   
+ body {
+     width: 790px;
+ }
+ textarea{
+   width: 350px;
+   height: 350px;
+}
+.jumbotron img {
+   width: 200px;
+   height: 200px;
+}
+#portfolioBox h3 {
+   font-size: 22px;
+   position: absolute;
+   bottom: 20px;
+   padding: 15px;
+   background-color: #4aaaa5;
+   color: #ffffff;
+   border-bottom: 0;
+   width: 52%;
+   margin-bottom: 0;
+   text-align: center;
+   font-weight: 300;
+   line-height: 30px;
+
+}
+
+}
+
