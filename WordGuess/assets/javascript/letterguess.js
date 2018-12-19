@@ -12,10 +12,10 @@ function pickLetter() {
 
 }
 
-
+var letter = pickLetter();
 
 document.onkeyup = function (event) {
-    var letter = pickLetter();
+    
     GuessesSoFar++;
     var userGuess = event.key;
     GuessesRemaining--;
@@ -42,6 +42,10 @@ document.onkeyup = function (event) {
         document.getElementById("losses").innerHTML = " " + losses;
         document.getElementById("guessesLeft").innerHTML = " " + GuessesRemaining;
         letter = pickLetter();
+    }
+    if (losses > 10) {
+        var HatefulMessage = "You lost more than 10 times, you have brought shame to your entire family";
+        document.getElementById("insult").innerHTML = HatefulMessage;
     }
 
 }
