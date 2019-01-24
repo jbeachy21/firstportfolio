@@ -1,6 +1,7 @@
 
 var correct = 0;
 var incorrect = 0;
+var userAnswers = [];
 
 var Questions = [
     {
@@ -121,23 +122,16 @@ var Questions = [
      
 ]
 
-function correctAnswers() {
-    var answers = [];
-    for (var i = 0; i<=21; i++) {
-        answers = answers + Questions[i].correctAnswer;
-        console.log("The correct answers are: " + answers + " ");
-        console.log("\n");
 
-    }
-    
-    return answers;
-}
+/*
+
 
 function displayQuestions() {
     var RadioQuestion;
     var currentQuestion = 0;
     var radio;
     var Answer;
+    
     for (var i = 0; i<=21; i++) {
         currentQuestion++;
         $("#quiz").append("" + currentQuestion + ") " + Questions[i].question + "<br>");
@@ -147,50 +141,156 @@ function displayQuestions() {
             RadioQuestion = Questions[i].answers[j];
             radio = document.createElement("INPUT");
             radio.setAttribute("attr", [j]);
-            radio.setAttribute("id", "radioQ"+[i]);
+            radio.setAttribute("id", "radioQ");
             radio.setAttribute("type", "radio");
             radio.setAttribute("name", "Question" + i); //Allows for only one radio button to be selected per question, by giving the same name to each set of answers
             if (j === Answer) {
                 radio.setAttribute("value", " " + Questions[i].correctAnswer);
                 //console.log("The correct answer for question " + currentQuestion + " is " + j);
             }
+            else {
+                radio.setAttribute("value", [j]);
+            }
             $("#quiz").append(radio);
             $("#quiz").append(" "); 
             $("#quiz").append(RadioQuestion + "<br>");
         }
         $("#quiz").append("<br>" + "<br>");
+    }  
+}
+*/
+function correctAnswers() {
+    var answers = [];
+    for (var i = 0; i<=Questions.length; i++) {
+        answers = answers + Questions[i].correctAnswer;
+        console.log("The correct answers are: " + answers + " ");
+        console.log("\n");
+
     }
-     
+    
+    return answers;
 }
 
 
-
-
 $(document).ready(function() {
+   
+   
     displayQuestions();
-    var Correct = correctAnswers();
+    function displayQuestions() {
+        var RadioQuestion;
+        var currentQuestion = 0;
+        var radio;
+        var Answer;
+        for (var i = 0; i<=Questions.length; i++) {
+            currentQuestion++;
+            $("#quiz").append("" + currentQuestion + ") " + Questions[i].question + "<br>");
+            var question = Questions[i].question;
+            for (var j = 0; j<Questions[i].answers.length; j++) {
+                Answer = Questions[i].correctAnswer;
+                RadioQuestion = Questions[i].answers[j];
+                radio = document.createElement("INPUT");
+                radio.setAttribute("attr", [j]);
+                radio.setAttribute("id", [i]);
+                radio.setAttribute("type", "radio");
+                radio.setAttribute("name", "Question" + i); //Allows for only one radio button to be selected per question, by giving the same name to each set of answers
+                if (j === Answer) {
+                    radio.setAttribute("value", "correct");
+                    //console.log("The correct answer for question " + currentQuestion + " is " + j);
+                }
+                else {
+                    radio.setAttribute("value", "incorrect");
+                }
+                $("#quiz").append(radio);
+                $("#quiz").append(" "); 
+                $("#quiz").append(RadioQuestion + "<br>");
+            }
+            $("#quiz").append("<br>" + "<br>");
+        }
+    }
+    
+    var Correct = parseInt(correctAnswers());
     console.log("THE CORRECT ANSWERS ARE: " + Correct);
     var choices = [];
+    var finalAnswers = [];
+    
     $("input").click(function() {
-        
+        var element = $(this);
+        var currentQuestion = 0;
+        var currentInput = parseInt($("input:checked").val());
         console.log("Click succesful");
-        var selected;
-        for (var i = 0; i<=21; i++) {
-            
-            
-            for (var j = 0; j<Questions[i].answers.length; j++) {
-                selected = Questions[i].answers[j];
-                choices = choices + $("input").
-                console.log("Input is : " + choices);
-                
-               
-            }
+        console.log("Current input = " + currentInput);
+
+        
+        
+
+        /*
+        if (Correct[3] instanceof String || typeof Correct[4] === 'string') {
+            console.log("This is a string"); 
         }
-    
-    })
-    
+        else {
+            console.log("this is not a sring");
+        }
+        */
+
+
+
+
+
+        /*
+        if (currentInput == Correct[currentQuestion]) {
+            currentQuestion++;
+            choices[currentQuestion] = Correct[currentQuestion];
+            correct++;
+            console.log("Correct answer selected");
+            console.log("Choices contains: " + choices);
+        }
+        else {
+            currentQuestion++;
+            choices[currentQuestion] = currentInput;
+            incorrect++;
+            console.log("INCORRECT");
+        }
+
+        */
+         
+        /*
+                for (var i = 0; i<=21; i++) {
+                    console.log("In for loop");
+                    console.log("currentInput = " + currentInput);
+                    console.log("Correct[i] = " + Correct[i]);
+                
+                
+                if (currentInput == Correct[i]) {
+                    
+                    choices[i] = Correct[i];
+                    correct++;
+                    console.log("Correct answer selected");
+                    console.log("Choices contains: " + choices);
+                }
+                else {
+                    console.log("In else loop");
+                    console.log("currentInput = " + currentInput);
+                    console.log("Correct[i] = " + Correct[i]);
+                    choices[i] = currentInput;
+                    incorrect++;
+                    console.log("INCORRECT");
+                }
+                
+            }
+                
+             */
+              
+            
+            
+
+     })
     
 
-});
+    $("#submit").click(function () {
+        $("#submit-area").text("You answered " + correct + " correct answers and " + incorrect + " incorrect answers");
+
+    }) 
+    
+    });
 
 
