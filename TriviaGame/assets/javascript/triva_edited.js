@@ -92,7 +92,7 @@ var Questions = [
     },
     {
         question: "Of these which is the biggest international soccer rivalry?",
-        answers: ['Argentina vs Brazil','Sweden vs Denmark','Germany vs Italy','The drillos','England vs Scotland'],
+        answers: ['Argentina vs Brazil','Sweden vs Denmark','Germany vs Italy','Iran vs Iraq','England vs Scotland'],
         correctAnswer: 0
     },
     {
@@ -127,8 +127,6 @@ function correctAnswers() {
     var answers = [];
     for (var i = 0; i<Questions.length; i++) {
         answers = answers + Questions[i].correctAnswer;
-        console.log("The correct answers are: " + answers + " ");
-        console.log("\n");
 
     }
     
@@ -148,15 +146,20 @@ function displayQuestions() {
             Answer = Questions[i].correctAnswer;
             RadioQuestion = Questions[i].answers[j];
             radio = document.createElement("INPUT");
+            //attr pretains to the index of each answer for each question
             radio.setAttribute("attr", [j]);
+            //id pretains to the question #
             radio.setAttribute("id", [i]);
             radio.setAttribute("type", "radio");
-            radio.setAttribute("name", "Question" + i); //Allows for only one radio button to be selected per question, by giving the same name to each set of answers
+            //Allows for only one radio button to be selected per question, by giving the same name to each set of answers
+            radio.setAttribute("name", "Question" + i); 
             if (j === Answer) {
                 radio.setAttribute("value", "correct");
-                //console.log("The correct answer for question " + currentQuestion + " is " + j);
+                radio.setAttribute("answer", j);
+                //sets value to correct
             } else {
                 radio.setAttribute("value", "incorrect");
+                //sets value to incorrect
             }
             $("#quiz").append(radio);
             $("#quiz").append(" "); 
@@ -174,35 +177,62 @@ $(document).ready(function() {
     displayQuestions();
     var Correct = correctAnswers();
     console.log("THE CORRECT ANSWERS ARE: " + Correct);
-    var choices = [];
+    
+    setInterval(timer, 1000000);
 
-    $("input").click(function() {
+    $("input").click(function timer() {
         
         var element = $(this);
-
+        
+        //get question # for array index
         var elementId = parseInt(element.attr("id"));
-        var userAnswer = element.attr("value");
-        console.log(elementId);
-        console.log(userAnswer);
-        console.log("Click succesful");
 
-        userAnswers[elementId] = userAnswer;
+        var CorrectAnswer = parseInt(element.attr("answer"));
+        
+        var elementAnswer = parseInt(element.attr("attr"));
+        
+        console.log("Click succesful");
+        //Array logs the answers similar to var Correct-Could be used later to show which questions were wrong
+        userAnswers[elementId] = elementAnswer;
         console.log(userAnswers);
-        var selected;
-        // for (var i = 0; i<=21; i++) {
-            
-            
-        //     for (var j = 0; j<Questions[i].answers.length; j++) {
-        //         selected = Questions[i].answers[j];
-        //         choices = choices + $("input").
-        //         console.log("Input is : " + choices);
-                
-               
-        //     }
-        // }
-    
+        console.log("Correct answers are " + Correct);
+        if (userAnswers[elementId] === CorrectAnswer) {
+            correct++;
+            console.log("Number Correct are " + correct + " and incorrect are " + incorrect);
+        }
+        else {
+            incorrect++;
+            console.log("Number Correct are " + correct + " and incorrect are " + incorrect);
+        }
+        
+
     })
-    
+     
+    $("#submit").click(function() {
+    clearInterval(timer);
+      var current = 0;  
+      $("#quiz").empty();  
+      $("#submit-area").empty();
+      $("#time-left").remove();
+      $("#quiz").append("Thanks for playing you got " + correct + " correct and " + incorrect + " incorrect" + "<br> <br>");
+       
+      for (var i = 0; i<Questions.length; i++) {
+          if (userAnswers[i] == Correct[i]) {
+              current = i + 1;
+              $("#quiz").append("This questions was answered correct");
+              $("#quiz").append("<br>" + current + ") " + Questions[i].question + "<br>");
+              $("#quiz").append("The correct answer is : " + Questions[i].answers[Questions[i].correctAnswer]);
+              $("#quiz").append("<br> <br>");
+          }
+          else {
+            current = i + 1;
+            $("#quiz").append("This questions was answered incorrect");
+            $("#quiz").append("<br>" + current + ") " + Questions[i].question + "<br>");
+            $("#quiz").append("The correct answer is : " + Questions[i].answers[Questions[i].correctAnswer]);
+            $("#quiz").append("<br> <br>");
+          }
+      }
+    })
     
 
 });
