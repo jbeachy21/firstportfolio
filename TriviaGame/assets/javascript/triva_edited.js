@@ -142,15 +142,22 @@ function displayQuestions() {
         currentQuestion++;
         $("#quiz").append("" + currentQuestion + ") " + Questions[i].question + "<br>");
         var question = Questions[i].question;
+       
         for (var j = 0; j<Questions[i].answers.length; j++) {
+            
+            
             Answer = Questions[i].correctAnswer;
             RadioQuestion = Questions[i].answers[j];
             radio = document.createElement("INPUT");
+            
             //attr pretains to the index of each answer for each question
             radio.setAttribute("attr", [j]);
+            
             //id pretains to the question #
             radio.setAttribute("id", [i]);
             radio.setAttribute("type", "radio");
+            
+            
             //Allows for only one radio button to be selected per question, by giving the same name to each set of answers
             radio.setAttribute("name", "Question" + i); 
             if (j === Answer) {
@@ -178,7 +185,9 @@ $(document).ready(function() {
     var Correct = correctAnswers();
     console.log("THE CORRECT ANSWERS ARE: " + Correct);
     
-    setInterval(timer, 1000000);
+    //setInterval(timer, 1000000);
+
+    
 
     $("input").click(function timer() {
         

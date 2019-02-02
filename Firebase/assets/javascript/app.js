@@ -64,9 +64,7 @@ $(document).ready(function () {
       var part1 = (current_time_minutes % deltaTime) + deltaTime; 
 
 
-      console.log ("Train time is : " + moment(parseInt(TrainTime) - 1).format("HH:mm"));
-      console.log("Delta time is : " + deltaTime);
-      console.log("Current time is : " + parseInt(moment(current_time).get('minutes')) % 5);
+      console.log("adding minutes to moment " + moment(current_time_minutes).format(":mm").add(5, 'm')); 
       //Add contents to the new rows of the table
       var newRow = $("<tr>").append(
         $("<td>").text(TrainName),
