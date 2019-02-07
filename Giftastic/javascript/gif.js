@@ -121,10 +121,8 @@ $(document).ready(function() {
                 GifImage.attr("src", results[i].images.fixed_height.url);
                 GifImage.attr("data-playing",results[i].images.fixed_height.url);
                 GifImage.attr("data-pause", results[i].images.fixed_height_still.url)
-                //GifImage.attr("src", results[i].images.fixed_height_still.url);
                 GifImage.addClass("gif");
-                $(GifImage).attr("play", true);
-                //GifImage.attr("data-id",results[i].images.fixed_height.url);
+                $(GifImage).attr("play", "playing");
                 gifs.append(rating);
                 gifs.prepend(GifImage);
                 $(GifImage).attr("id", "movie");
@@ -137,25 +135,29 @@ $(document).ready(function() {
     })
 
     
-    // This function in combination with the commented out part really should work to pause 
-    // But it isn't cuz javascript is a slut 
+    
     $(document).on("click", ".gif", function () {
-        console.log("hello");
-        //to pause
+       
+        
         var pausedImage = $(this).attr("data-pause");
-        console.log(pausedImage)
-        //$(this.attr("src", pausedImage));
+        var playingImage = $(this).attr("data-playing");
+        
 
 
-        /*
-        if ($(this.attr("play"))) {
-            $(this.attr("src", "pause"));
+        //pauses gif
+        if ($(this).attr("play") === "playing") {
+            $(this).attr("play","still");
+            console.log("hello");
+            $(this).attr("src", pausedImage);
+            console.log("play is " + $(this).attr("play"));
         }
-        //to play
+        //plays gif
         else {
-            $(this.attr("src","playing"));
+            console.log("hello2");
+            $(this).attr("src",playingImage);
+            $(this).attr("play","playing");
         }
-        */
+        
     })
 
     
