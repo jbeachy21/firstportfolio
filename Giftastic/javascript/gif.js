@@ -101,7 +101,7 @@ $(document).ready(function() {
         var movieName = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=jJ0FBfi3dIcdhlxVZUe2XZMU6RnWcwX2&q=" + movieName + " movie&limit=25&lang=en";
         
-        
+        $("#gifs-div").empty();
         
         
         $.ajax({
@@ -147,13 +147,13 @@ $(document).ready(function() {
         //pauses gif
         if ($(this).attr("play") === "playing") {
             $(this).attr("play","still");
-            console.log("hello");
+            
             $(this).attr("src", pausedImage);
-            console.log("play is " + $(this).attr("play"));
+             
         }
         //plays gif
         else {
-            console.log("hello2");
+            
             $(this).attr("src",playingImage);
             $(this).attr("play","playing");
         }
