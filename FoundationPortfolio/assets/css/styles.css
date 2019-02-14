@@ -22,3 +22,6 @@ i:hover, #envelope:hover{
 a, i:hover {
     font-size:10em;
 }
+.spin-cw {
+    @include mui-animation(spin(in, 360deg));
+  }
