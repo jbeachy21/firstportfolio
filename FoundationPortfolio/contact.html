@@ -52,23 +52,24 @@
         
     </div> -->
 
-    <form>
+    <form name="form1" method="POST" action="mailto:jbeachy@gustavus.edu">
       <p class="lead text-center">If you wish to get in contact please leave your name, phone number, email, and any comments you might have.</p>
         <div class="grid-container">
           <div class="grid-x grid-padding-x">
             <div class="medium-4 cell float-left">
               <label>Name
-                <input type="text" placeholder="Your John Hancock please">
+                <input type="text" placeholder="Your John Hancock please" name="name">
               </label>
             </div>
             <div class="medium-4 cell float-center">
                 <label>Phone Number
-                  <input type="number" placeholder="123-456-7890">
+                  <input type="tel" placeholder="Format: 123-456-7890" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  required>
                 </label>
               </div>
             <div class="medium-4 cell float-right">
                 <label>Email
-                  <input type="text" placeholder="john@example.com">
+                  <input type="text" placeholder="john@example.com" name="email">
                 </label>
               </div>
    </div>
@@ -77,14 +78,13 @@
 
    
     <label>Comments</label>
-    <textarea rows="7">
+    <textarea rows="7" name="Comment">
 
     </textarea>
 
   </div>
-      <button type="submit" class="button large float-center" id="submit">Submit
-
-      </button>
+      <input type="submit" class="button large float-center" value="Send"><input type="reset" class="button large float-center">
+      
        
         
        
