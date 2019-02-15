@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Font awesome -->
@@ -29,15 +31,15 @@
     <!-- Navigation bar -->
     
       <nav style="background-color:beige;box-shadow: 2px 2px 5px grey;" class="animated lightSpeedIn">
-      <ul class="menu icons icon-right expanded align-center align-middle"><li><a href="index.html" class="button large align-center"><span>About Me</span><i class="fas fa-user"></i></a></li> 
+      <ul class="menu icons icon-right expanded align-center align-middle"><li><a href="index.html" class="button large align-center" id="about"><span>About Me</span><i class="fas fa-user"></i></a></li> 
             <!-- <img src="assets/images/logo.jpg" style="width:45%;margin:1em;height:45%;"class="separator-center" id="logo" onMouseOver="this.style.class='animated hinge'"/>-->
             
 
         
         <li>
-          <a href="contact.html" class="button large" ><span>Contact</span><i class="fas fa-mobile-alt"></i></a></li>
+          <a href="contact.html" class="button large" id="contact"><span>Contact</span><i class="fas fa-mobile-alt"></i></a></li>
         <li>
-          <a href="portfolio.html" class="button large align-center"><span>Portfolio</span><i class="fas fa-file"></i></a></li>
+          <a href="portfolio.html" class="button large align-center" id="portfolio"><span>Portfolio</span><i class="fas fa-file"></i></a></li>
       </ul>
     </nav>
     
@@ -53,11 +55,11 @@
       <li style="margin-right:1em;" class="float-center">
           <div class="card animated zoomIn delay-1s" style="width:300px;background-color: beige;box-shadow: 2px 2px 5px grey;">
               <div class="card-divider" style="background-color: beige;">
-                <h4><a href="../Giftastic/index.html">Giftastic</a></h4>
+                <h4><a href="../Giftastic/index.html" id="gif">Giftastic</a></h4>
               </div>
               <img src="assets/images/giftastic.png">
               <div class="card-section">
-                <p>This project uses of the Giphy API to display GIFs pretaining to name of the button clicked. Additional buttons can also be added and then used to display GIFs. <a href="https://github.com/jbeachy21/jbeachy21.github.io/tree/master/Giftastic">Github page</a></p>
+                <p>This project uses of the Giphy API to display GIFs pretaining to name of the button clicked. Additional buttons can also be added and then used to display GIFs. <a href="https://github.com/jbeachy21/jbeachy21.github.io/tree/master/Giftastic" id="github">Github page</a></p>
               </div>
             </div>
   
@@ -65,11 +67,11 @@
       <li style="margin-right:1em;" class="float-center">
           <div class="card animated zoomIn delay-2s" style="width:300px;background-color: beige;box-shadow: 2px 2px 5px grey;">
               <div class="card-divider" style="background-color: beige;">
-                <h4><a href="../Unit_4_Game/CrystalCollector.html">Crystal Collector</a></h4>
+                <h4><a href="../Unit_4_Game/CrystalCollector.html" id="crystal">Crystal Collector</a></h4>
               </div>
               <img src="assets/images/crystal2.png">
               <div class="card-section">
-                <p>This project makes use of the data attribute to randomly assign integer values in a range to 4 buttons.  The goal is to click these buttons to perfectly reach the score goal to win the game.<a href="https://github.com/jbeachy21/jbeachy21.github.io/tree/master/Unit_4_Game">Github page</a></p>
+                <p>This project makes use of the data attribute to randomly assign integer values in a range to 4 buttons.  The goal is to click these buttons to perfectly reach the score goal to win the game.<a href="https://github.com/jbeachy21/jbeachy21.github.io/tree/master/Unit_4_Game" id="github">Github page</a></p>
               </div>
             </div>
   
@@ -77,11 +79,11 @@
       <li style="margin-right:1em;" class="float-center">
           <div class="card animated zoomIn delay-3s" style="width:300px;background-color: beige;box-shadow: 2px 2px 5px grey;">
               <div class="card-divider" style="background-color: beige;">
-                <h4><a href="../TriviaGame/index.html">Soccer Trivia</a></h4>
+                <h4><a href="../TriviaGame/index.html" id="soccer">Soccer Trivia</a></h4>
               </div>
               <img src="assets/images/trivia.png">
               <div class="card-section">
-                <p>This project uses timers to simulate a timed trivia game.  Like any trivia game pick your answers and click the submit button before time is up.  Then the correct and incorrect answers will be displayed on the following screen.<a href="https://github.com/jbeachy21/jbeachy21.github.io/tree/master/TriviaGame">Github page</a></p>
+                <p>This project uses timers to simulate a timed trivia game.  Like any trivia game pick your answers and click the submit button before time is up.  Then the correct and incorrect answers will be displayed on the following screen.<a href="https://github.com/jbeachy21/jbeachy21.github.io/tree/master/TriviaGame" id="github">Github page</a></p>
               </div>
             </div>
   
@@ -98,7 +100,7 @@
           <div class="sticky" data-sticky data-stick-to="bottom">
           <ul class="no-bullet menu">
             <li><p class="invisible" style="font-size:75%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum error dolor tenetur quasi nulla rem! Sapiente beatae odio asperiores adipisci cumque voluptatibus labore nostrum id nihil inventore, fugit excepturi animi.</p></li>
-            <li><p class="lead">Jasper Beachy&copy</p></li>
+            <li>Jasper Beachy&copy</li>
             
             <!--Linked in button-->
           <li><a href="https://www.linkedin.com/in/jasperbeachy/" class=" clear button"><i class="fab fa-linkedin fa-2x" 
