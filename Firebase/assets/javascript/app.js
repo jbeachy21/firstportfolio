@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-  //current time in minutes 
-  //var current_time_minutes = new moment().format(":mm");
-  
-  
   
   var config = {
     apiKey: "AIzaSyAj8p-PKorkRHiRsSVFd_mEzOTgdWlqEys",
@@ -16,33 +12,30 @@ $(document).ready(function () {
   firebase.initializeApp(config);
   var database = firebase.database();
 
+  database.ref().on("value", function(childSnapshot) {
+
+    //Get content back from Firebase in the form of the childSnapshot
+    var TrainName = childSnapshot.val().Tname;
+    var TrainDestination = childSnapshot.val().Tdestination;
+    var TrainTime = childSnapshot.val().Ttime; //Next arrival
+    var TrainFrequency = childSnapshot.val().Tfreq;
 
 
-database.ref().on("child_added", function(childSnapshot) {
-
-      //Get content back from Firebase in the form of the childSnapshot
-      var TrainName = childSnapshot.val().Tname;
-      var TrainDestination = childSnapshot.val().Tdestination;
-      var TrainTime = childSnapshot.val().Ttime; //Next arrival
-      var TrainFrequency = childSnapshot.val().Tfreq;
+    //var deltaTime = moment(TrainFrequency).format(":mm");
+    //var part1 = (current_time_minutes % deltaTime) + deltaTime; 
 
 
-      //var deltaTime = moment(TrainFrequency).format(":mm");
-      //var part1 = (current_time_minutes % deltaTime) + deltaTime; 
-
-
-      //console.log("adding   minutes to moment " + moment(current_time_minutes).format(":mm").add(5, 'm')); 
-      //Add contents to the new rows of the table
-      var newRow = $("<tr>").append(
-        $("<td>").text(TrainName),
-        $("<td>").text(TrainDestination),
-        $("<td>").text(TrainFrequency),
-        $("<td>").text(TrainTime));
-        //$("<td>").text(part1);
-      $("#train-table > tbody").append(newRow);
-      
-    })
+    //console.log("adding   minutes to moment " + moment(current_time_minutes).format(":mm").add(5, 'm')); 
+    //Add contents to the new rows of the table
+    var newRow = $("<tr>").append(
+      $("<td>").text(TrainName),
+      $("<td>").text(TrainDestination),
+      $("<td>").text(TrainFrequency),
+      $("<td>").text(TrainTime));
+      // $("<td>").text(rn);
+    $("#train-table > tbody").append(newRow);
     
+  })
   
   //var current_time = new moment().format("HH:mm");
   //console.log(current_time);
@@ -72,13 +65,15 @@ database.ref().on("child_added", function(childSnapshot) {
     var destination = $("#destination-text").val();
     var Traintime = $("#train-time").val();
     var frequency = $("#frequency").val();
+    var MinutesAway = "8:31";
 
     //form values gathered
     var newTrain = {
       Tname: name,
       Tdestination: destination,
       Ttime: Traintime,
-      Tfreq: frequency
+      Tfreq: frequency,
+      Tminutes: MinutesAway
     };
     //All new train information is pushed to firebase
     database.ref().push(newTrain);
@@ -96,36 +91,32 @@ database.ref().on("child_added", function(childSnapshot) {
     $("#frequency").val("");
 
 
-    database.ref().on("child_added", function(childSnapshot) {
-
-      //Get content back from Firebase in the form of the childSnapshot
-      var TrainName = childSnapshot.val().Tname;
-      var TrainDestination = childSnapshot.val().Tdestination;
-      var TrainTime = childSnapshot.val().Ttime; //Next arrival
-      var TrainFrequency = childSnapshot.val().Tfreq;
-
-
-      //var deltaTime = moment(TrainFrequency).format(":mm");
-      //var part1 = (current_time_minutes % deltaTime) + deltaTime; 
-
-
-      //console.log("adding   minutes to moment " + moment(current_time_minutes).format(":mm").add(5, 'm')); 
-      //Add contents to the new rows of the table
-      var newRow = $("<tr>").append(
-        $("<td>").text(TrainName),
-        $("<td>").text(TrainDestination),
-        $("<td>").text(TrainFrequency),
-        $("<td>").text(TrainTime));
-        //$("<td>").text(part1);
-      $("#train-table > tbody").append(newRow);
-      
-    })
-    
-   
-    
   })
 
+  database.ref().on("child_added", function(childSnapshot) {
 
+    //Get content back from Firebase in the form of the childSnapshot
+    var TrainName = childSnapshot.val().Tname;
+    var TrainDestination = childSnapshot.val().Tdestination;
+    var TrainTime = childSnapshot.val().Ttime; //Next arrival
+    var TrainFrequency = childSnapshot.val().Tfreq;
+
+
+    //var deltaTime = moment(TrainFrequency).format(":mm");
+    //var part1 = (current_time_minutes % deltaTime) + deltaTime; 
+
+    //var rn = moment().format("HH:mm");
+    //console.log("adding   minutes to moment " + moment(current_time_minutes).format(":mm").add(5, 'm')); 
+    //Add contents to the new rows of the table
+    var newRow = $("<tr>").append(
+      $("<td>").text(TrainName),
+      $("<td>").text(TrainDestination),
+      $("<td>").text(TrainFrequency),
+      $("<td>").text(TrainTime))
+      // $("<td>").text(Tminutes);
+    $("#train-table > tbody").append(newRow);
+    
+  })
 });
 
   

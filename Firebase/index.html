@@ -6,29 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-    ></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    <!-- jquery -->
+    <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- JS  -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <!-- Moment -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <!-- CSS -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
     <title>Train Scheduler</title>
   </head>
+
   <div class="jumbotron" id="title"><h1>Train Scheduler</h1></div>
 
   <body>
-    <br />
-    <br />
-    <br />
+
+
+    <br>
+    <br>
+    <br>
 
     <div class="container-fluid border border-secondary" id="table-box">
       <h3 class="text-left">Current Train Schedule</h3>
@@ -48,54 +49,49 @@
         </tbody>
       </table>
     </div>
-    <br /><br /><br />
-    <br />
-    <br />
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <div class="container-fluid border border-primary">
       <h3 class="text-center">Add train</h3>
-      <input
-        class="form-control form-control-sm-6"
-        type="text"
-        id="train-name"
-        placeholder="Train Name"
-      />
+      <input class="form-control form-control-sm-6"type="text"id="train-name"placeholder="Train Name">
 
-      <br /><br />
+      <br>
+      <br>
 
-      <input
-        class="form-control form-control-sm-6"
-        type="text"
-        id="destination-text"
-        placeholder="Destination"
-      />
+      <input class="form-control form-control-sm-6" type="text" id="destination-text"placeholder="Destination">
 
-      <br /><br />
+      <br>
+      <br>
 
-      <input
-        class="form-control form-control-sm-6"
-        type="number"
-        id="frequency"
-        placeholder="Frequency (minutes)"
-      />
+
+      <input class="form-control form-control-sm-6"type="number"id="frequency"placeholder="Frequency (minutes)">
       <br>
       <input class="form-control form-control-sm-6" type="time" id="train-time" placeholder="Train Time (military time)">
 
-                <br><br>
+                
+      <br>
+      <br>
                 
       
 
-      <button type="submit" class="btn btn-outline-primary" id="submit">
-        Submit
-      </button>
+      <button type="submit" class="btn btn-outline-primary" id="submit">Submit</button>
        
-      <br />
-      <br />
-      <br />
+      <br>
+      <br>
+      <br>
+
     </div>
 
-    <br />
-    <br />
-    <br />
+    <br>
+    <br>
+    <br>
+
+
   </body>
 </html>
