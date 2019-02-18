@@ -1,12 +1,13 @@
-.footer {
-  color: #fff;
+#footer {
   clear: both;
-  margin: 0em 0em 0em 0em;
-   
-  background: beige;
-  position: sticky;
+  background-color: beige;
   margin-top: 7em;
   border-top: 1px solid #000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
 }
 
 
@@ -56,9 +57,9 @@ a#crystal:hover, a#gif:hover, a#soccer:hover {
 }
 /* Deployed project link Animations */
 #github:hover {
-text-decoration: underline;
-animation-name: github;
-animation-duration: 1s;
+  text-decoration: underline;
+  animation-name: github;
+  animation-duration: 1s;
 }
 @-webkit-keyframes github {
     0% {
