@@ -16,6 +16,34 @@ $(document).ready(function () {
   firebase.initializeApp(config);
   var database = firebase.database();
 
+
+
+database.ref().on("child_added", function(childSnapshot) {
+
+      //Get content back from Firebase in the form of the childSnapshot
+      var TrainName = childSnapshot.val().Tname;
+      var TrainDestination = childSnapshot.val().Tdestination;
+      var TrainTime = childSnapshot.val().Ttime; //Next arrival
+      var TrainFrequency = childSnapshot.val().Tfreq;
+
+
+      //var deltaTime = moment(TrainFrequency).format(":mm");
+      //var part1 = (current_time_minutes % deltaTime) + deltaTime; 
+
+
+      //console.log("adding   minutes to moment " + moment(current_time_minutes).format(":mm").add(5, 'm')); 
+      //Add contents to the new rows of the table
+      var newRow = $("<tr>").append(
+        $("<td>").text(TrainName),
+        $("<td>").text(TrainDestination),
+        $("<td>").text(TrainFrequency),
+        $("<td>").text(TrainTime));
+        //$("<td>").text(part1);
+      $("#train-table > tbody").append(newRow);
+      
+    })
+    
+  
   //var current_time = new moment().format("HH:mm");
   //console.log(current_time);
 
@@ -44,9 +72,8 @@ $(document).ready(function () {
     var destination = $("#destination-text").val();
     var Traintime = $("#train-time").val();
     var frequency = $("#frequency").val();
+
     //form values gathered
-
-
     var newTrain = {
       Tname: name,
       Tdestination: destination,

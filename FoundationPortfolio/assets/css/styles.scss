@@ -38,3 +38,33 @@ a#crystal:hover,a#gif:hover, a#soccer:hover{
 
 
 /* Navbar animations */
+#about:hover {
+    -webkit-animation-name: aboutA;
+    -webkit-animation-duration: 0.5s;
+    animation-name: aboutA;
+    animation-duration: 0.5s;
+}
+
+@-webkit-keyframes aboutA{
+    0% {
+        
+    }
+     50% {
+         
+    }
+    100% {
+        
+    }
+}
+
+@keyframes aboutA{
+    0% {
+        
+    }
+    50% {
+        
+    } 
+    100% {
+        
+    }
+}

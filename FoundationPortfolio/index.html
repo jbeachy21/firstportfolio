@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Font awesome -->
@@ -20,9 +22,7 @@
     <script src="assets/js/app.js"></script>
     <!-- Granim -->
     <script src="../../CSS_Libraries/granim/dist/granim.min.js"></script>
-    <!-- Motion UI -->
-    <!-- Insert this within your head tag and after foundation.css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    
 
   </head>
 
@@ -32,15 +32,16 @@
     <!-- Navigation bar -->
     
       <nav style="background-color:beige;box-shadow: 2px 2px 5px grey;" class="animated lightSpeedIn">
-      <ul class="menu icons icon-right expanded align-center align-middle"><li><a href="index.html" class="button large align-center"><span>About Me</span><i class="fas fa-user"></i></a></li> 
+      <ul class="menu icons icon-right expanded align-center align-middle">
+        <li><a href="index.html" class="button large align-center" id="about"><span>About Me</span><i class="fas fa-user"></i></a></li> 
             <!-- <img src="assets/images/logo.jpg" style="width:45%;margin:1em;height:45%;"class="separator-center" id="logo" onMouseOver="this.style.class='animated hinge'"/>-->
             
 
         
         <li>
-          <a href="contact.html" class="button large" ><span>Contact</span><i class="fas fa-mobile-alt"></i></a></li>
+          <a href="contact.html" class="button large" id="contact"><span>Contact</span><i class="fas fa-mobile-alt"></i></a></li>
         <li>
-          <a href="portfolio.html" class="button large align-center"><span>Portfolio</span><i class="fas fa-file"></i></a></li>
+          <a href="portfolio.html" class="button large align-center" id="portfolio"><span>Portfolio</span><i class="fas fa-file"></i></a></li>
       </ul>
     </nav>
     
@@ -82,7 +83,7 @@
           <div class="sticky" data-sticky data-stick-to="bottom">
           <ul class="no-bullet menu">
             <li><p class="invisible" style="font-size:75%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum error dolor tenetur quasi nulla rem! Sapiente beatae odio asperiores adipisci cumque voluptatibus labore nostrum id nihil inventore, fugit excepturi animi.</p></li>
-            <li><p class="lead">Jasper Beachy&copy</p></li>
+            
             
             <!--Linked in button-->
           <li><a href="https://www.linkedin.com/in/jasperbeachy/" class=" clear button"><i class="fab fa-linkedin fa-2x" 
