@@ -20,12 +20,42 @@ $(document).ready(function () {
     var TrainTime = childSnapshot.val().Ttime; //Next arrival
     var TrainFrequency = childSnapshot.val().Tfreq;
 
+    //var current_time = new moment().format("HH:mm");
+  //console.log(current_time);
 
-    //var deltaTime = moment(TrainFrequency).format(":mm");
-    //var part1 = (current_time_minutes % deltaTime) + deltaTime; 
+  // var whenTheTrainFirstArrives = moment("13:00", "HH:mm");
+  // var frequency = 25;
+  // var rightNow = moment("16:19", "HH:mm");
+  // //1:00 -> 1:25 -> 1:50 -> 2:15 -> 2:40 -> 3:05 -> 3:30 -> 3:55 -> 4:20
+  // //minutesAway = 20
+  // var timeDiff = whenTheTrainFirstArrives.diff(rightNow, 'minutes');
+  // if(timeDiff < 0) {
+  //   timeDiff = timeDiff * -1;
+  // }
+  // console.log("timediff: " + timeDiff);
+  // var offSet = timeDiff % frequency;
+  // console.log("offSet: " + offSet);
+
+  // var timeTillTrain = frequency - offSet;
+  // console.log("timeTillTrain: " + timeTillTrain);
+
+  var whenTheTrainFirstArrives = TrainTime;
+  console.log("whenTheTrainFirstArrives: " + whenTheTrainFirstArrives);
+
+  var frequency = TrainFrequency;
+  console.log("TrainFrequency: " + frequency);
+
+  var rightNow = moment().format('HH:mm:s');
+  console.log("rightNow: " + rightNow);
 
 
-    //console.log("adding   minutes to moment " + moment(current_time_minutes).format(":mm").add(5, 'm')); 
+  var timeDiff = moment().diff(moment(whenTheTrainFirstArrives), 'minutes');
+  console.log("timeDiff: " + timeDiff);
+  if (timeDiff < 0) timeDiff = timeDiff * -1;
+  console.log("\n");
+     
+
+     
     //Add contents to the new rows of the table
     var newRow = $("<tr>").append(
       $("<td>").text(TrainName),
@@ -76,6 +106,12 @@ $(document).ready(function () {
 
   database.ref().on("child_added", function(childSnapshot) {
 
+  
+
+
+
+
+
     //Get content back from Firebase in the form of the childSnapshot
     var TrainName = childSnapshot.val().Tname;
     var TrainDestination = childSnapshot.val().Tdestination;
@@ -83,11 +119,7 @@ $(document).ready(function () {
     var TrainFrequency = childSnapshot.val().Tfreq;
 
 
-    //var deltaTime = moment(TrainFrequency).format(":mm");
-    //var part1 = (current_time_minutes % deltaTime) + deltaTime; 
-
-    //var rn = moment().format("HH:mm");
-    //console.log("adding   minutes to moment " + moment(current_time_minutes).format(":mm").add(5, 'm')); 
+     
     //Add contents to the new rows of the table
     var newRow = $("<tr>").append(
       $("<td>").text(TrainName),
@@ -98,41 +130,7 @@ $(document).ready(function () {
     $("#train-table > tbody").append(newRow);
 
 
-
-
-
-  //var current_time = new moment().format("HH:mm");
-  //console.log(current_time);
-
-  // var whenTheTrainFirstArrives = moment("13:00", "HH:mm");
-  // var frequency = 25;
-  // var rightNow = moment("16:19", "HH:mm");
-  // //1:00 -> 1:25 -> 1:50 -> 2:15 -> 2:40 -> 3:05 -> 3:30 -> 3:55 -> 4:20
-  // //minutesAway = 20
-  // var timeDiff = whenTheTrainFirstArrives.diff(rightNow, 'minutes');
-  // if(timeDiff < 0) {
-  //   timeDiff = timeDiff * -1;
-  // }
-  // console.log("timediff: " + timeDiff);
-  // var offSet = timeDiff % frequency;
-  // console.log("offSet: " + offSet);
-
-  // var timeTillTrain = frequency - offSet;
-  // console.log("timeTillTrain: " + timeTillTrain);
-
-  var whenTheTrainFirstArrives = TrainTime;
-  console.log("whenTheTrainFirstArrives: " + whenTheTrainFirstArrives);
-
-  var frequency = TrainFrequency;
-  console.log("TrainFrequency: " + frequency);
-
-  var rightNow = moment().format('HH:mm');
-  console.log("rightNow: " + rightNow);
-
-  console.log("\n");
-
-  
-    
+ 
   })
 });
 
