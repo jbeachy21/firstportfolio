@@ -16,6 +16,8 @@ $(document).ready(function() {
     var TrainDestination = childSnapshot.val().Tdestination;
     var TrainTime = childSnapshot.val().Ttime; //Next arrival
     var TrainFrequency = childSnapshot.val().Tfreq;
+
+    
    
    });
 
@@ -26,13 +28,56 @@ $(document).ready(function() {
     var destination = $("#destination-text").val();
     var Traintime = $("#train-time").val();
     var frequency = $("#frequency").val();
+    
+
+    //form values gathered
+    var newTrain = {
+      Tname: name,
+      Tdestination: destination,
+      Ttime: Traintime,
+      Tfreq: frequency,
+    };
 
 
-    var whenTheTrainFirstArrives = moment(Traintime, "HH:mm");
+    
+
+
+
+    //All new train information is pushed to firebase
+    database.ref().push(newTrain);
+
+    console.log("Tname: " + newTrain.Tname);
+    console.log("Tdestination: " + newTrain.Tdestination);
+    console.log("Ttime: " + newTrain.Ttime);
+    console.log("Tfreq: " + newTrain.Tfreq);
+    
+
+    //resets text fields
+    $("#train-name").val("");
+    $("#destination-text").val("");
+    $("#train-time").val("");
+    $("#frequency").val("");
+    
+  });
+
+
+
+
+  database.ref().on("child_added", function(childSnapshot) {
+    
+    //Get content back from Firebase in the form of the childSnapshot
+    var TrainName = childSnapshot.val().Tname;
+    var TrainDestination = childSnapshot.val().Tdestination;
+    var TrainTime = childSnapshot.val().Ttime; //Next arrival
+    var TrainFrequency = childSnapshot.val().Tfreq;
+  
+
+
+    var whenTheTrainFirstArrives = moment(TrainTime, "HH:mm");
     console.log("whenTheTrainFirstArrives: " + whenTheTrainFirstArrives);
 
-    var Frequency = frequency;
-    console.log("TrainFrequency: " + Frequency);
+    var Frequency = moment(TrainFrequency, "m");
+    console.log("TrainFrequency: " + TrainFrequency);
 
     var rightNow = moment().format("HH:mm:s");
     console.log("rightNow: " + rightNow);
@@ -43,53 +88,11 @@ $(document).ready(function() {
     }
     console.log("timeDiff: " + timeDiff);
 
-    var offset = timeDiff % Frequency;
+    var offset = timeDiff % TrainFrequency;
     console.log("offset: " + offset);
-    var timeTillTrain = Frequency - offset;
-    console.log("timetillTrain: " + timeTillTrain);
+    var timeTillTrain = TrainFrequency - offset;
+    var nextTrain = moment().add(timeTillTrain, 'minutes');
     console.log("\n");
-
-
-    
-    //form values gathered
-    var newTrain = {
-      Tname: name,
-      Tdestination: destination,
-      Ttime: Traintime,
-      Tfreq: frequency,
-      Taway: timeTillTrain
-    };
-
-
-    //All new train information is pushed to firebase
-    database.ref().push(newTrain);
-
-    console.log(newTrain.Tname);
-    console.log(newTrain.Tdestination);
-    console.log(newTrain.Ttime);
-    console.log(newTrain.Tfreq);
-    console.log(newTrain.Taway);
-
-    //resets text fields
-    $("#train-name").val("");
-    $("#destination-text").val("");
-    $("#train-time").val("");
-    $("#frequency").val("");
-    
-  });
-
-  database.ref().on("child_added", function(childSnapshot) {
-    
-    //Get content back from Firebase in the form of the childSnapshot
-    var TrainName = childSnapshot.val().Tname;
-    var TrainDestination = childSnapshot.val().Tdestination;
-    var TrainTime = childSnapshot.val().Ttime; //Next arrival
-    var TrainFrequency = childSnapshot.val().Tfreq;
-    var TrainAway = childSnapshot.val().Taway;
-    
-    console.log(TrainAway);
-
-    
 
 
 
@@ -99,7 +102,7 @@ $(document).ready(function() {
       $("<td>").text(TrainDestination),
       $("<td>").text(TrainFrequency),
       $("<td>").text(TrainTime),
-      $("<td>").text(TrainAway)
+      $("<td>").text(nextTrain)
     );
     
     $("#train-table > tbody").append(newRow);
