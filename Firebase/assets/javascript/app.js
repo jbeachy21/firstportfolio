@@ -10,16 +10,6 @@ $(document).ready(function() {
   firebase.initializeApp(config);
   var database = firebase.database();
 
-  database.ref().on("value", function(childSnapshot) {
-     //Get content back from Firebase in the form of the childSnapshot
-    var TrainName = childSnapshot.val().Tname;
-    var TrainDestination = childSnapshot.val().Tdestination;
-    var TrainTime = childSnapshot.val().Ttime; //Next arrival
-    var TrainFrequency = childSnapshot.val().Tfreq;
-
-    
-   
-   });
 
   $("#submit").on("click", function(event) {
 
@@ -37,11 +27,6 @@ $(document).ready(function() {
       Ttime: Traintime,
       Tfreq: frequency,
     };
-
-
-    
-
-
 
     //All new train information is pushed to firebase
     database.ref().push(newTrain);
@@ -91,18 +76,28 @@ $(document).ready(function() {
     var offset = timeDiff % TrainFrequency;
     console.log("offset: " + offset);
     var timeTillTrain = TrainFrequency - offset;
-    var nextTrain = moment().add(timeTillTrain, 'minutes');
+
+    moment(timeTillTrain, "m");
+    var nextArrival = moment().add(timeTillTrain).format("HH:mm");
+    //var nextTrain = moment().add(timeTillTrain, 'minutes');
     console.log("\n");
 
 
+
+    var close = $("<button></button>");
+    close.addClass("btn btn-circle btn-default");
+    close.attr("type","button");
+    close.text("X");
+    close.attr("id", "close");
 
     //Add contents to the new rows of the table
     var newRow = $("<tr>").append(
       $("<td>").text(TrainName),
       $("<td>").text(TrainDestination),
       $("<td>").text(TrainFrequency),
-      $("<td>").text(TrainTime),
-      $("<td>").text(nextTrain)
+      $("<td>").text(nextArrival),
+      $("<td>").text(timeTillTrain),
+      $("<td>").html(close)
     );
     
     $("#train-table > tbody").append(newRow);
