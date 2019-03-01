@@ -57,7 +57,7 @@ $(document).ready(function() {
     var TrainFrequency = childSnapshot.val().Tfreq;
   
 
-
+    
     var whenTheTrainFirstArrives = moment(TrainTime, "HH:mm");
     console.log("whenTheTrainFirstArrives: " + whenTheTrainFirstArrives);
 
@@ -84,11 +84,13 @@ $(document).ready(function() {
 
 
 
-    var close = $("<button></button>");
-    close.addClass("btn btn-circle btn-default");
-    close.attr("type","button");
-    close.text("X");
-    close.attr("id", "close");
+
+    //Was going to attempt to add a close button to remove a child from firebase but Ill do it later
+    // var close = $("<button></button>");
+    // close.addClass("btn btn-circle btn-default");
+    // close.attr("type","button");
+    // close.text("X");
+    // close.attr("id", "close");
 
     //Add contents to the new rows of the table
     var newRow = $("<tr>").append(
@@ -97,7 +99,7 @@ $(document).ready(function() {
       $("<td>").text(TrainFrequency),
       $("<td>").text(nextArrival),
       $("<td>").text(timeTillTrain),
-      $("<td>").html(close)
+      //$("<td>").html(close)
     );
     
     $("#train-table > tbody").append(newRow);
