@@ -181,6 +181,7 @@ function displayQuestions() {
 
 
 $(document).ready(function() {
+    
     displayQuestions();
     var Correct = correctAnswers();
     console.log("THE CORRECT ANSWERS ARE: " + Correct);
@@ -217,7 +218,7 @@ $(document).ready(function() {
 
     })
      
-    $("#submit").click(function() {
+    $("#submit").click(function done() {
     clearInterval(timer);
       var current = 0;  
       $("#quiz").empty();  

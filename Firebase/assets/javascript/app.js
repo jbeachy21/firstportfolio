@@ -78,7 +78,7 @@ $(document).ready(function() {
     var timeTillTrain = TrainFrequency - offset;
 
     moment(timeTillTrain, "m");
-    var nextArrival = moment().add(timeTillTrain).format("HH:mm");
+    var nextArrival = moment().add(timeTillTrain, "minutes").format("HH:mm");
     //var nextTrain = moment().add(timeTillTrain, 'minutes');
     console.log("\n");
 
