@@ -15,18 +15,20 @@ nav {
    padding-top:1.5em;
 }
 /* Animation1 */
-#soccer, #gif, #crystal {
+#soccer, #gif, #crystal, #liri, #train, #psychic, #friend{
   text-shadow: 2px 2px 2px gray;
 }
 
-a#crystal:hover, a#gif:hover, a#soccer:hover {
+a#crystal:hover, a#gif:hover, a#soccer:hover, a#liri:hover, a#train:hover, a#psychic:hover, a#friend:hover {
   text-decoration: underline;
-  text-shadow: none;
   -webkit-animation-name: link;
   -webkit-animation-duration: 0.5s;
   animation-name: link;
-  animation-duration: 0.5s;
-  transform: rotate3d(2, -1, -1, -0.2turn);
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  color: red;
+  /* transform: rotate3d(2, -1, -1, -0.2turn); */
 }
 
 /* Keyframes */
@@ -35,12 +37,15 @@ a#crystal:hover, a#gif:hover, a#soccer:hover {
     text-shadow: 2px 2px 2px gray;
   }
    50% {
-     text-shadow: 1px 1px 1px gray; transform: rotate3d(1, 1, 1, 45deg);
+    text-shadow: 2px 2px 2px gray;
+    transform: rotate3d(1, 1, 1, 30deg);
+    color: red;
+    text-decoration: underline;
     } 
   100% {
-    text-shadow: none;
+    text-shadow: 2px 2px 2px gray;
+    color: red;
     text-decoration: underline;
-    /* transform: rotate3d(2, -1, -1, -0.2turn); */
   }
 }
 @keyframes link {
@@ -48,39 +53,59 @@ a#crystal:hover, a#gif:hover, a#soccer:hover {
     text-shadow: 2px 2px 2px gray;
   }
    50% {
-    text-shadow: 1px 1px 1px gray; transform: rotate3d(1, 1, 1, 45deg);} 
-  100% {
-    text-shadow: none;
+    text-shadow: 2px 2px 2px gray;
+    transform: rotate3d(1, 1, 1, 30deg);
+    color: red;
     text-decoration: underline;
-    /* transform: rotate3d(2, -1, -1, -0.2turn); */
+    } 
+  100% {
+    text-shadow: 2px 2px 2px gray;
+    color: red;
+    text-decoration: underline;
   }
 }
 /* Deployed project link Animations */
+#github {
+  text-shadow: 2px 2px 2px gray;
+}
 #github:hover {
   text-decoration: underline;
   animation-name: github;
   animation-duration: 1s;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  color: red;
 }
 @-webkit-keyframes github {
-    0% {
-      
-    }
-     50% {
-         
-        } 
-    100% {
-         
-    }
+  0% {
+    text-shadow: 2px 2px 2px gray;
+  }
+   50% {
+    text-shadow: 2px 2px 2px gray;
+    transform: rotate3d(1, 1, 1, 15deg);
+    color: red;
+    text-decoration: underline;
+    } 
+  100% {
+    text-shadow: 2px 2px 2px gray;
+    color: red;
+    text-decoration: underline;
+  }
   }
   @keyframes github {
     0% {
-      
+      text-shadow: 2px 2px 2px gray;
     }
      50% {
-         
-        } 
+      text-shadow: 2px 2px 2px gray;
+      transform: rotate3d(1, 1, 1, 15deg);
+      color: red;
+      text-decoration: underline;
+      } 
     100% {
-         
+      text-shadow: 2px 2px 2px gray;
+      color: red;
+      text-decoration: underline;
     }
   }
 
