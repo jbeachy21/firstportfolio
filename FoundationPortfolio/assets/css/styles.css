@@ -19,7 +19,7 @@ nav {
   text-shadow: 2px 2px 2px gray;
 }
 
-a#crystal:hover, a#gif:hover, a#soccer:hover, a#liri:hover, a#train:hover, a#psychic:hover, a#friend:hover {
+a#crystal:hover, a#gif:hover, a#soccer:hover, a#liri:hover, a#train:hover, a#psychic:hover, a#friend:hover, a#bamazon:hover {
   text-decoration: underline;
   -webkit-animation-name: link;
   -webkit-animation-duration: 0.5s;
