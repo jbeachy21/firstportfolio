@@ -12,7 +12,11 @@ body {
   bottom: 0;
   width: 100%;
 }
-
+#logo {
+  width:45%;
+  margin:1em;
+  height:45%;
+}
 nav {
    padding-top:1.5em;
 }
