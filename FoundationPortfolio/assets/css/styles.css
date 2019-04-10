@@ -13,13 +13,12 @@ body {
   width: 100%;
 }
 #logo {
-  width:45%;
-  margin:1em;
-  height:45%;
+  width:142.95px;
+  
+  height:44.38px;
+  /* border: 1px solid black; */
 }
-nav {
-   padding-top:1.5em;
-}
+
 /* Animation1 */
 #soccer, #gif, #crystal, #liri, #train, #psychic, #friend, #bamazon, #beerReviews, #driving{
   text-shadow: 2px 2px 2px gray;
