@@ -5,6 +5,10 @@ body {
   background: rgb(180,58,169);
   background: radial-gradient(circle, rgba(180,58,169,1) 0%, rgba(253,29,29,1) 50%, rgba(252,240,69,1) 100%);
 }
+h5 {
+  width: 130px;
+  height: 45px;
+}
 #footer {
   clear: both;
   background-color: beige;
@@ -48,7 +52,7 @@ a#psychic:hover, a#friend:hover, a#bamazon:hover, a#beerReviews:hover, a#driving
   }
    50% {
     text-shadow: 2px 2px 2px gray;
-    transform: rotate3d(1, 1, 1, 30deg);
+    transform: rotate3d(1, 1, 1, 45deg);
     color: red;
     text-decoration: underline;
     } 
@@ -64,7 +68,7 @@ a#psychic:hover, a#friend:hover, a#bamazon:hover, a#beerReviews:hover, a#driving
   }
    50% {
     text-shadow: 2px 2px 2px gray;
-    transform: rotate3d(1, 1, 1, 30deg);
+    transform: rotate3d(1, 1, 1, 45deg);
     color: red;
     text-decoration: underline;
     } 
@@ -93,7 +97,7 @@ h5:hover, a#github:hover {
   }
    50% {
     text-shadow: 2px 2px 2px gray;
-    transform: rotate3d(1, 1, 1, 15deg);
+    transform: rotate3d(1, 1, 1, 45deg);
     color: red;
     text-decoration: underline;
     } 
@@ -109,7 +113,7 @@ h5:hover, a#github:hover {
     }
      50% {
       text-shadow: 2px 2px 2px gray;
-      transform: rotate3d(1, 1, 1, 15deg);
+      transform: rotate3d(1, 1, 1, 45deg);
       color: red;
       text-decoration: underline;
       } 
