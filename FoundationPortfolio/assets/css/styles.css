@@ -23,11 +23,11 @@ body {
 }
 
 /* Animation1 */
-#soccer, #gif, #crystal, #liri, #train, #psychic, #friend, #bamazon, #beerReviews, #driving{
+a#soccer, a#gif, a#crystal, a#liri, a#train, a#psychic, a#friend, a#bamazon, a#beerReviews, a#driving{
   text-shadow: 2px 2px 2px gray;
 }
 
-a#crystal:hover, a#gif:hover, a#soccer:hover, a#liri:hover, a#train:hover, 
+h4:hover, a#crystal:hover, a#gif:hover, a#soccer:hover, a#liri:hover, a#train:hover, 
 a#psychic:hover, a#friend:hover, a#bamazon:hover, a#beerReviews:hover, a#driving:hover {
   text-decoration: underline;
   -webkit-animation-name: link;
@@ -78,7 +78,7 @@ a#psychic:hover, a#friend:hover, a#bamazon:hover, a#beerReviews:hover, a#driving
 #github {
   text-shadow: 2px 2px 2px gray;
 }
-#github:hover {
+h5:hover, a#github:hover {
   text-decoration: underline;
   animation-name: github;
   animation-duration: 1s;
