@@ -5,7 +5,7 @@ var topic = ["Pulp Fiction", "Kill Bill", "Inglorious Basterds", "Deadpool", "Mi
 "The Breakfast Club", "Ghostbusters", "E.T", "War for the Planet of the Apes", "Boogie Nights", "Zombieland", "Star Trek: Beyond", 
 "Harry Potter and the Deathly Hallows", "Jumanji", "The Hobbit", "The Lord of the Rings Trilogy", "Iron Man", "Star Wars", "Watchmen",
 "Avatar", "Blow", "The Godfather", "Terminator", "Guardians of the Galaxy", "The Big Lebowski", "Monty Python and the Holy Grail",
-"Princess Monoke", "Gladiator", "The Dark Knight", "Fight Club", "Casablanca", "Reservoir Dogs", "Blade Runner 2049", "Top Gun", 
+"Princess Mononoke", "Gladiator", "The Dark Knight", "Fight Club", "Casablanca", "Reservoir Dogs", "Blade Runner 2049", "Top Gun", 
 "Neverending Story"];
 
 

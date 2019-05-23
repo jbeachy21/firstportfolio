@@ -9,16 +9,6 @@ h5 {
   width: 130px;
   height: 45px;
 }
-#footer {
-  clear: both;
-  background-color: beige;
-  margin-top: 7em;
-  border-top: 1px solid #000;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 #logo {
   width:142.95px;
   
@@ -238,6 +228,16 @@ h5:hover, a#github:hover {
     100% {
         
     }
+}
+#footer {
+  clear: both;
+  background-color: beige;
+  margin-top: 7em;
+  border-top: 1px solid #000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 

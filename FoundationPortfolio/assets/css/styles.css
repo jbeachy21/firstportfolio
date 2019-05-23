@@ -5,24 +5,11 @@ body {
   background: rgb(180,58,169);
   background: radial-gradient(circle, rgba(180,58,169,1) 0%, rgba(253,29,29,1) 50%, rgba(252,240,69,1) 100%);
 }
-#footer {
-  clear: both;
-  background-color: beige;
-  margin-top: 7em;
-  border-top: 1px solid #000;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
+
 #logo {
   width:142.95px;
-  
   height:44.38px;
-  /* border: 1px solid black; */
 }
-
-
 
 
 /* Navbar  styling*/
@@ -34,4 +21,14 @@ body {
 }
 #about {
     box-shadow: 2px 2px 2px black;
+}
+#footer {
+  clear: both;
+  background-color: beige;
+  margin-top: 7em;
+  border-top: 1px solid #000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
